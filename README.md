@@ -41,7 +41,7 @@ Stage|finish|x_y_z|x类型y大关卡z小关卡完成
 
 event_sort | event_type | event_position | 事件描述 
 -|-|-|-
-Ad|impression|x| x位置广告位展示
+Ad|impression|x| x位置激励视频广告展示
   
     JoypacAdClient.Instance.eventLog("Ad","impression","x","{\"adType\":\"rewardVideo\"}");
     
