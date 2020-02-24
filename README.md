@@ -63,4 +63,6 @@ Behavior|click|setting| 设置按钮点击
 
      JoypacAdClient.Instance.ReceiveGameGroupId("GroupA");
 
+## 上报结果检查
 
+请关注Console中的输出。
