@@ -56,7 +56,7 @@ Behavior|click|setting| 设置按钮点击
 ## 在线参数
 在初始化SDK后，调用GetOnlineParameter()方法获取在线参数，参数以json字符穿的形式返回；在后台配置所需线参数后，十分钟后生效;
 
-     JoypacAdClient.Instance.GetOnlineParameter();
+     JoypacAdClient.Instance.GetOnlineParameters();
           
 ## 分组
 需要游戏分组时，调用 ReceiveGameGroupId(string cGroupId)方法，将游戏分组ID传递给SDK，SDK将分组信息上报服务端;
