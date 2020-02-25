@@ -8,14 +8,11 @@ package (Unity)
 * Leave all the files checked and click Import.
 
 
+> Check that the Unity environment has been already configured with the modules for the platforms you are targeting.
+>
+> If you are targeting iOS, this is a good time to go to File > Build Settings > iOS and make sure the iOS module is loaded and you can create iOS builds.
 
 
-
-
-## 2. 导入SDK
-解压下载下来的SDK，获得 Joypac_Unity_SDK.framework 和 JoypacAdClient.cs 文件
-#### 1. 将 Joypac_Unity_SDK.framework 文件放到 Plugins/iOS 路径下
-#### 2. 将 JoypacAdClient.cs 文件放在 Script 路径下
 ## 3. SDK初始化
 一般在游戏第一个场景里调用init方法，这样就完成了初始化SDK的工作。
      
