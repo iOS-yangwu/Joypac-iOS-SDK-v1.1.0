@@ -12,6 +12,9 @@ package (Unity)
 >
 > If you are targeting iOS, this is a good time to go to File > Build Settings > iOS and make sure the iOS module is loaded and you can create iOS builds.
 
+## Initialization
+You need to manually initialize the SDK by calling `JoypacAdClient.Instance.InitSDK("yourAppID");` from your own GameObject.
+When your initialization is complete, the SDK will generate a GameObject called `AdObject`,This GameObject is to accept callbacks.
 
 ## 3. SDK初始化
 一般在游戏第一个场景里调用init方法，这样就完成了初始化SDK的工作。
