@@ -3,9 +3,9 @@
 ### 1.Download SDK
 ### 2.Import SDK
 package (Unity)
-1. In the Unity editor go to Assets > Import Package > Custom Package.
-2. Browse to the package location on your hard disk.
-3. Leave all the files checked and click Import.
+* In the Unity editor go to Assets > Import Package > Custom Package.
+* Browse to the package location on your hard disk.
+* Leave all the files checked and click Import.
 
 
 
