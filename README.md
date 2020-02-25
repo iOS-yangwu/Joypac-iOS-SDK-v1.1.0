@@ -1,5 +1,17 @@
-# Joypac行为数据上报iOS SDK 接入文档-v1.1.0
-## 1. 下载SDK
+# Joypac Unity SDK 
+## Download and Installation
+### 1.Download SDK
+### 2.Import SDK
+package (Unity)
+1. In the Unity editor go to Assets > Import Package > Custom Package.
+2. Browse to the package location on your hard disk.
+3. Leave all the files checked and click Import.
+
+
+
+
+
+
 ## 2. 导入SDK
 解压下载下来的SDK，获得 Joypac_Unity_SDK.framework 和 JoypacAdClient.cs 文件
 #### 1. 将 Joypac_Unity_SDK.framework 文件放到 Plugins/iOS 路径下
