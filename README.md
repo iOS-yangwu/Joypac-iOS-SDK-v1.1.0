@@ -37,18 +37,26 @@ progression01 | string | yes | 1st progression (e.g. world01)
 progression02 | string | no | 2nd progression (e.g. level01)
 progression03 | string | no | If you need to upload more behavior parameters, you can edit the parameters as json strings and pass them in `progression03`
 
+    JoypacAdClient.Instance.eventLog("Start","","","");
+    JoypacAdClient.Instance.eventLog("Start","World1","","");
+    JoypacAdClient.Instance.eventLog("Start","World1","Level1","");
+    JoypacAdClient.Instance.eventLog("Complete","World1","Level1","{\"score\":\"100\"}");
+    
 
+## OnlineParameters
+After initializing the SDK, to get a onlineParameters call the following function: 
 
-## 5.在线参数
-在初始化SDK后，调用GetOnlineParameter()方法获取在线参数，参数以json字符穿的形式返回；在后台配置所需线参数后，十分钟后生效;
-
-     JoypacAdClient.Instance.GetOnlineParameters();
+     JoypacAdClient.Instance.GetOnlineParameters(string parameters);
+     
+and the parameters are returned in the form of Json string;
           
-## 6.分组
-需要游戏分组时，调用 ReceiveGameGroupId(string cGroupId)方法，将游戏分组ID传递给SDK，SDK将分组信息上报服务端;
+## Game grouping
+
+When a game group is needed, call the ReceiveGameGroupId(string cGroupId) method to pass the game groupID to the SDK, and the SDK reports the group information to the server;
 
      JoypacAdClient.Instance.ReceiveGameGroupId("GroupA");
 
-## 7.上报结果检查
+## Reporting result check
 
-请关注Console中的输出。
+
+Please pay attention to the output in Console.
