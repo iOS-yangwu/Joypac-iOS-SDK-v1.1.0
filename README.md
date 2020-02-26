@@ -58,6 +58,7 @@ The parameters are returned in the form of Json string.
 Please pay attention to the output in Console.
 
 Search `Joypac Event reporting parameters` to view reporting parameters;
+
 Search `Joypac Event reporting results` to view reporting results;
 
 
