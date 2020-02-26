@@ -48,7 +48,7 @@ After initializing the SDK, to get a onlineParameters call the following functio
 
      JoypacAdClient.Instance.GetOnlineParameters(string parameters);
      
-and the parameters are returned in the form of Json string;
+The parameters are returned in the form of Json string.
           
 ## Game grouping
 
