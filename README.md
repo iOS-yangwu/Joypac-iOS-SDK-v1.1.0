@@ -29,13 +29,7 @@ Therefore when submitting events from GameObjects in Unity it is recommended to 
 To add a progression event call the following function:
 
     JoypacAdClient.Instance.eventLog(string progressionStatus,string progression01, string progression02,string progression03);
-
-If you need to upload more behavior parameters, you can edit the parameters as json strings and pass them in `event_extra`
-
-
     
-3、用户行为
-
 Field | Type | Required | Description
 -|-|-|-
 progressionStatus | string | yes | Status of added progression (start, complete, fail)
@@ -44,8 +38,6 @@ progression02 | string | no | 2nd progression (e.g. level01)
 progression03 | string | no | If you need to upload more behavior parameters, you can edit the parameters as json strings and pass them in `progression03`
 
 
-  
-    JoypacAdClient.Instance.eventLog("Behavior","click","setting","");
 
 ## 5.在线参数
 在初始化SDK后，调用GetOnlineParameter()方法获取在线参数，参数以json字符穿的形式返回；在后台配置所需线参数后，十分钟后生效;
