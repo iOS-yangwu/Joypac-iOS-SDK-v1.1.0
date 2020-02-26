@@ -16,52 +16,34 @@ package (Unity)
 You need to manually initialize the SDK by calling `JoypacAdClient.Instance.InitSDK("yourAppID");` from your own GameObject.
 When your initialization is complete, the SDK will generate a GameObject called `AdObject`,This GameObject is to accept callbacks.
 
-## 3. SDK初始化
-一般在游戏第一个场景里调用init方法，这样就完成了初始化SDK的工作。
-     
-    JoypacAdClient.Instance.InitSDK("yourAppID");
-    
-## 4.上报行为数据
-在App内发生转化行为时，可以调用上报接口上报行为数据。上报API
+## when to log envets?
 
-    JoypacAdClient.Instance.eventLog("event_sort","event_type","event_position","event_extra");
+Unity provides the GameObject methods called awake and start.
+First all GameObjects get the awake call. When every awake is done then all GameObjects get the start call.
 
-命名规则
+The execution order for each is not fixed.
 
-第一层级：事件分类 （event_sort）
+Therefore when submitting events from GameObjects in Unity it is recommended to do this after (or inside) the start method. This will ensure everything is ready.
 
-第二层级：事件类型 （event_type）
+## Progression
+To add a progression event call the following function:
 
-第三层级：事件位置 （event_position）
+    JoypacAdClient.Instance.eventLog(string progressionStatus,string progression01, string progression02,string progression03);
 
-拓展字段：如需要上传更多行为参数，可将参数编辑为json字符串，传入event_extra
+If you need to upload more behavior parameters, you can edit the parameters as json strings and pass them in `event_extra`
 
 
-例如：
-
-1、阶段性行为
-
-event_sort | event_type | event_position | 事件描述 
--|-|-|-
-Stage|enter|x_y_z| 进入x类型y大关卡z小关卡
-Stage|finish|x_y_z|x类型y大关卡z小关卡完成
-
-    JoypacAdClient.Instance.eventLog("Stage","enter","x_y_z","");
-    JoypacAdClient.Instance.eventLog("Stage","finish","x_y_z","");
-    
-2、广告
-
-event_sort | event_type | event_position | 事件描述 
--|-|-|-
-Ad|impression|x| x位置激励视频广告展示
-  
-    JoypacAdClient.Instance.eventLog("Ad","impression","x","{\"adType\":\"rewardVideo\"}");
     
 3、用户行为
 
-event_sort | event_type | event_position | 事件描述 
+Field | Type | Required | Description
 -|-|-|-
-Behavior|click|setting| 设置按钮点击
+progressionStatus | string | yes | Status of added progression (start, complete, fail)
+progression01 | string | yes | 1st progression (e.g. world01)
+progression02 | string | no | 2nd progression (e.g. level01)
+progression03 | string | no | If you need to upload more behavior parameters, you can edit the parameters as json strings and pass them in `progression03`
+
+
   
     JoypacAdClient.Instance.eventLog("Behavior","click","setting","");
 
