@@ -16,15 +16,6 @@ package (Unity)
 You need to manually initialize the SDK by calling `JoypacAdClient.Instance.InitSDK("yourAppID");` from your own GameObject.
 When your initialization is complete, the SDK will generate a GameObject called `AdObject`,This GameObject is to accept callbacks.
 
-## when to log envets?
-
-Unity provides the GameObject methods called awake and start.
-First all GameObjects get the awake call. When every awake is done then all GameObjects get the start call.
-
-The execution order for each is not fixed.
-
-Therefore when submitting events from GameObjects in Unity it is recommended to do this after (or inside) the start method. This will ensure everything is ready.
-
 ## Progression
 To add a progression event call the following function:
 
@@ -42,6 +33,15 @@ progression03 | string | no | If you need to upload more behavior parameters, yo
     JoypacAdClient.Instance.eventLog("Start","World1","Level1","");
     JoypacAdClient.Instance.eventLog("Complete","World1","Level1","{\"score\":\"100\"}");
     
+## Design
+To add a design event also call the following function:
+    
+    JoypacAdClient.Instance.eventLog(string progressionStatus,string progression01, string progression02,string progression03);
+    
+    //click set button 
+    JoypacAdClient.Instance.eventLog("Behavior","Click","Set","");
+   
+
 
 ## OnlineParameters
 After initializing the SDK, to get a onlineParameters call the following function: 
@@ -50,12 +50,6 @@ After initializing the SDK, to get a onlineParameters call the following functio
      
 The parameters are returned in the form of Json string.
           
-## Game grouping
-
-When a game group is needed, call the ReceiveGameGroupId(string cGroupId) method to pass the game groupID to the SDK, and the SDK reports the group information to the server;
-
-     JoypacAdClient.Instance.ReceiveGameGroupId("GroupA");
-
 ## Reporting result check
 
 
