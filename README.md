@@ -34,12 +34,15 @@ progression03 | string | no | If you need to upload more behavior parameters, yo
     JoypacAdClient.Instance.eventLog("Complete","World1","Level1","{\"score\":\"100\"}");
     
 ## Design
-To add a design event also call the following function:
+To add a design event also call the function:
     
-    JoypacAdClient.Instance.eventLog(string progressionStatus,string progression01, string progression02,string progression03);
+    JoypacAdClient.Instance.eventLog(string parameter1,string parameter2, string parameter3,string parameter4);
     
     //click set button 
     JoypacAdClient.Instance.eventLog("Behavior","Click","Set","");
+    
+    //Launch application
+    JoypacAdClient.Instance.eventLog("Behavior","launch","","");
    
 
 
@@ -52,5 +55,8 @@ The parameters are returned in the form of Json string.
           
 ## Reporting result check
 
-
 Please pay attention to the output in Console.
+Search `Joypac Event reporting parameters` to view reporting parameters;
+Search `Joypac Event reporting results` to view reporting results;
+
+
